@@ -5,4 +5,5 @@ test('launch amazon', async ({page}) => {
         console.log(await page.url());
         console.log(title1);        
         console.log(newline01);
+        console.log("testline in main branch");
 })
