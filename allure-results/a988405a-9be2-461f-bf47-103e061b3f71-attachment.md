@@ -1,0 +1,1106 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: example.spec.js >> iframe
+- Location: tests\example.spec.js:4:1
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('#iframe-1').contentFrame().locator('//span[text()=\'installation\']')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - link "Skip to content" [ref=e2]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - banner [ref=e6]:
+        - generic [ref=e7]:
+          - link [ref=e8]:
+            - /url: https://practice-automation.com/
+            - img "automateNow Logo" [ref=e9]
+          - navigation "Top Menu" [ref=e10]:
+            - list [ref=e11]:
+              - listitem [ref=e12]:
+                - link "Blog" [ref=e13]:
+                  - /url: https://automatenow.io/
+              - listitem [ref=e14]:
+                - link "YouTube" [ref=e15]:
+                  - /url: https://www.youtube.com/c/automateNow
+      - generic [ref=e17]:
+        - heading "Iframes" [level=1] [ref=e18]
+        - navigation [ref=e19]:
+          - generic [ref=e20]:
+            - link "Home" [ref=e22]:
+              - /url: https://practice-automation.com/
+            - text: » Iframes
+    - main [ref=e26]:
+      - article [ref=e28]:
+        - generic [ref=e29]:
+          - paragraph [ref=e30]: An iframe (short for “inline frame”) is an HTML element that allows you to embed another HTML document within the current document. Iframes are commonly used to embed external content such as videos, maps, or other web pages (as seen here) into a web page without affecting the parent document.
+          - paragraph [ref=e31]:
+            - text: Use these examples to learn
+            - link "how to handle iframes in test automation" [ref=e32]:
+              - /url: https://www.youtube.com/watch?v=4spQdcXWtzQ
+            - text: .
+          - paragraph [ref=e33]: I’m an iframe
+          - iframe [active] [ref=e34]:
+            - generic [ref=f1e2]:
+              - region "Skip to main content":
+                - link "Skip to main content" [ref=f1e3]:
+                  - /url: "#__docusaurus_skipToContent_fallback"
+              - navigation "Main" [ref=f1e4]:
+                - generic [ref=f1e5]:
+                  - generic [ref=f1e6]:
+                    - link "Playwright logo Playwright" [ref=f1e7]:
+                      - /url: /
+                      - img "Playwright logo" [ref=f1e9]
+                      - generic [ref=f1e10]: Playwright
+                    - link "Docs" [ref=f1e11]:
+                      - /url: /docs/intro
+                    - link "MCP" [ref=f1e12]:
+                      - /url: /mcp/introduction
+                    - link "CLI" [ref=f1e13]:
+                      - /url: /agent-cli/introduction
+                    - link "API" [ref=f1e14]:
+                      - /url: /docs/api/class-playwright
+                    - button "Node.js" [ref=f1e16]
+                  - generic [ref=f1e17]:
+                    - link "GitHub repository" [ref=f1e18]:
+                      - /url: https://github.com/microsoft/playwright
+                    - link "Discord server" [ref=f1e19]:
+                      - /url: https://aka.ms/playwright/discord
+                    - button "Switch between dark and light mode (currently system mode)" [ref=f1e21] [cursor=pointer]
+                    - button "Search (Control+k)" [ref=f1e25] [cursor=pointer]:
+                      - generic [ref=f1e26]: Search
+                      - generic [ref=f1e31]:
+                        - generic [ref=f1e32]: Ctrl
+                        - generic [ref=f1e33]: K
+              - generic [ref=f1e36]:
+                - complementary [ref=f1e37]:
+                  - navigation "Docs sidebar" [ref=f1e40]:
+                    - list [ref=f1e41]:
+                      - listitem [ref=f1e42]:
+                        - link "Introduction" [ref=f1e43]:
+                          - /url: /mcp/introduction
+                      - listitem [ref=f1e45]:
+                        - button "Getting Started" [expanded] [ref=f1e47]
+                        - list [ref=f1e49]:
+                          - listitem [ref=f1e50]:
+                            - link "Installation" [ref=f1e51]:
+                              - /url: /mcp/installation
+                          - listitem [ref=f1e53]:
+                            - button "Client Setup" [ref=f1e55]
+                      - listitem [ref=f1e57]:
+                        - button "Core Concepts" [expanded] [ref=f1e59]
+                        - list [ref=f1e61]:
+                          - listitem [ref=f1e62]:
+                            - link "Snapshots" [ref=f1e63]:
+                              - /url: /mcp/snapshots
+                          - listitem [ref=f1e65]:
+                            - link "Capabilities" [ref=f1e66]:
+                              - /url: /mcp/capabilities
+                          - listitem [ref=f1e68]:
+                            - link "Vision Mode" [ref=f1e69]:
+                              - /url: /mcp/vision-mode
+                      - listitem [ref=f1e71]:
+                        - button "Browser Automation" [expanded] [ref=f1e73]
+                        - list [ref=f1e75]:
+                          - listitem [ref=f1e76]:
+                            - link "Navigation" [ref=f1e77]:
+                              - /url: /mcp/tools/navigation
+                          - listitem [ref=f1e79]:
+                            - link "Interaction" [ref=f1e80]:
+                              - /url: /mcp/tools/interaction
+                          - listitem [ref=f1e82]:
+                            - link "Forms" [ref=f1e83]:
+                              - /url: /mcp/tools/forms
+                          - listitem [ref=f1e85]:
+                            - link "Keyboard & Mouse" [ref=f1e86]:
+                              - /url: /mcp/tools/keyboard-mouse
+                          - listitem [ref=f1e88]:
+                            - link "Tabs" [ref=f1e89]:
+                              - /url: /mcp/tools/tabs
+                          - listitem [ref=f1e91]:
+                            - link "Dialogs" [ref=f1e92]:
+                              - /url: /mcp/tools/dialogs
+                          - listitem [ref=f1e94]:
+                            - link "File Upload" [ref=f1e95]:
+                              - /url: /mcp/tools/file-upload
+                          - listitem [ref=f1e97]:
+                            - link "Waiting" [ref=f1e98]:
+                              - /url: /mcp/tools/waiting
+                      - listitem [ref=f1e100]:
+                        - button "Network & Storage" [expanded] [ref=f1e102]
+                        - list [ref=f1e104]:
+                          - listitem [ref=f1e105]:
+                            - link "Network & Mocking" [ref=f1e106]:
+                              - /url: /mcp/tools/network-mocking
+                          - listitem [ref=f1e108]:
+                            - link "Storage & Authentication" [ref=f1e109]:
+                              - /url: /mcp/tools/storage
+                      - listitem [ref=f1e111]:
+                        - button "Developer Tools" [expanded] [ref=f1e113]
+                        - list [ref=f1e115]:
+                          - listitem [ref=f1e116]:
+                            - link "Console" [ref=f1e117]:
+                              - /url: /mcp/tools/console
+                          - listitem [ref=f1e119]:
+                            - link "Screenshots" [ref=f1e120]:
+                              - /url: /mcp/tools/screenshots
+                          - listitem [ref=f1e122]:
+                            - link "Code Execution" [ref=f1e123]:
+                              - /url: /mcp/tools/code-execution
+                          - listitem [ref=f1e125]:
+                            - link "Tracing" [ref=f1e126]:
+                              - /url: /mcp/tools/tracing
+                          - listitem [ref=f1e128]:
+                            - link "Debugging Tools" [ref=f1e129]:
+                              - /url: /mcp/tools/devtools
+                          - listitem [ref=f1e131]:
+                            - link "Testing & Assertions" [ref=f1e132]:
+                              - /url: /mcp/tools/assertions
+                          - listitem [ref=f1e134]:
+                            - link "PDF Export" [ref=f1e135]:
+                              - /url: /mcp/tools/pdf
+                      - listitem [ref=f1e137]:
+                        - link "Video Recording" [ref=f1e138]:
+                          - /url: /mcp/tools/video
+                      - listitem [ref=f1e140]:
+                        - button "Sessions" [expanded] [ref=f1e142]
+                        - list [ref=f1e144]:
+                          - listitem [ref=f1e145]:
+                            - link "Profile & State" [ref=f1e146]:
+                              - /url: /mcp/configuration/user-profile
+                          - listitem [ref=f1e148]:
+                            - link "Connecting to Browsers" [ref=f1e149]:
+                              - /url: /mcp/configuration/browser-extension
+                      - listitem [ref=f1e151]:
+                        - link "Configuration" [ref=f1e152]:
+                          - /url: /mcp/configuration/options
+                - main [ref=f1e154]:
+                  - generic [ref=f1e156]:
+                    - generic [ref=f1e158]:
+                      - article [ref=f1e159]:
+                        - navigation "Breadcrumbs" [ref=f1e160]:
+                          - list [ref=f1e161]:
+                            - listitem [ref=f1e162]:
+                              - link "Home page" [ref=f1e163]:
+                                - /url: /
+                            - listitem [ref=f1e166]:
+                              - generic [ref=f1e167]: Introduction
+                        - generic [ref=f1e168]:
+                          - heading "Playwright MCP" [level=1] [ref=f1e170]
+                          - paragraph [ref=f1e171]:
+                            - text: A
+                            - link "Model Context Protocol" [ref=f1e172]:
+                              - /url: https://modelcontextprotocol.io
+                            - text: server that provides browser automation capabilities using Playwright. Enables LLMs to interact with web pages through structured accessibility snapshots — no vision models required.
+                          - heading [level=2] [ref=f1e173]:
+                            - text: Example
+                            - link "Direct link to Example" [ref=f1e174]:
+                              - /url: "#example"
+                              - text: "#"
+                          - generic [ref=f1e176]:
+                            - code [ref=f1e178]:
+                              - generic [ref=f1e179]: "You: Navigate to https://demo.playwright.dev/todomvc and add \"Buy groceries\"."
+                              - generic [ref=f1e181]: "→ browser_navigate { url: \"https://demo.playwright.dev/todomvc\" }"
+                              - generic [ref=f1e183]: "- heading \"todos\" [level=1] [ref=e3]"
+                              - generic [ref=f1e184]: "- textbox \"What needs to be done?\" [ref=e5]"
+                              - generic [ref=f1e186]: "→ browser_type { target: \"e5\", text: \"Buy groceries\", submit: true }"
+                              - generic [ref=f1e188]: "- heading \"todos\" [level=1] [ref=e3]"
+                              - generic [ref=f1e189]: "- textbox \"What needs to be done?\" [ref=e5]"
+                              - generic [ref=f1e190]: "- list [ref=e8]:"
+                              - generic [ref=f1e191]: "- listitem [ref=e9]:"
+                              - generic [ref=f1e192]: "- checkbox \"Toggle Todo\" [ref=e10]"
+                              - generic [ref=f1e193]: "- text: Buy groceries"
+                              - generic [ref=f1e194]: "- contentinfo [ref=e12]:"
+                              - generic [ref=f1e195]: "- text: 1 item left"
+                            - button "Copy code to clipboard" [ref=f1e197] [cursor=pointer]
+                          - paragraph [ref=f1e203]:
+                            - text: The LLM reads the accessibility snapshot, finds element refs like
+                            - code [ref=f1e204]: e5
+                            - text: ", and passes them as the"
+                            - code [ref=f1e205]: target
+                            - text: of the next tool call — clicking buttons, filling forms, checking checkboxes. No screenshots or coordinate guessing needed.
+                          - heading [level=2] [ref=f1e206]:
+                            - text: Key Features
+                            - link "Direct link to Key Features" [ref=f1e207]:
+                              - /url: "#key-features"
+                              - text: "#"
+                          - list [ref=f1e208]:
+                            - listitem [ref=f1e209]:
+                              - strong [ref=f1e210]: Snapshot-based
+                              - text: — operates on the accessibility tree, not pixels. Each element gets a unique ref for deterministic interaction
+                            - listitem [ref=f1e211]:
+                              - strong [ref=f1e212]: LLM-friendly
+                              - text: — structured text output that LLMs parse naturally, far cheaper than DOM dumps or screenshots
+                            - listitem [ref=f1e213]:
+                              - strong [ref=f1e214]: Cross-browser
+                              - text: — Chrome, Firefox, WebKit, and Edge support
+                            - listitem [ref=f1e215]:
+                              - strong [ref=f1e216]: Full automation
+                              - text: — 70+ tools covering navigation, forms, network mocking, storage, tracing, video, and more
+                            - listitem [ref=f1e217]:
+                              - strong [ref=f1e218]: Persistent sessions
+                              - text: — login state and cookies preserved between sessions by default
+                            - listitem [ref=f1e219]:
+                              - strong [ref=f1e220]: Works everywhere
+                              - text: — VS Code, Cursor, Windsurf, Claude Code, Claude Desktop, and any MCP client
+                          - heading [level=2] [ref=f1e221]:
+                            - text: Quick Start
+                            - link "Direct link to Quick Start" [ref=f1e222]:
+                              - /url: "#quick-start"
+                              - text: "#"
+                          - paragraph [ref=f1e223]: "Add the server to your MCP client:"
+                          - generic [ref=f1e225]:
+                            - code [ref=f1e227]:
+                              - generic [ref=f1e228]: "{"
+                              - generic [ref=f1e229]: "\"mcpServers\": {"
+                              - generic [ref=f1e230]: "\"playwright\": {"
+                              - generic [ref=f1e231]: "\"command\": \"npx\","
+                              - generic [ref=f1e232]: "\"args\": [\"@playwright/mcp@latest\"]"
+                              - generic [ref=f1e233]: "}"
+                              - generic [ref=f1e234]: "}"
+                              - generic [ref=f1e235]: "}"
+                            - button "Copy code to clipboard" [ref=f1e237] [cursor=pointer]
+                          - paragraph [ref=f1e243]:
+                            - text: The browser opens in
+                            - strong [ref=f1e244]: headed mode
+                            - text: by default so you can see what's happening. See
+                            - link "Installation" [ref=f1e245]:
+                              - /url: /mcp/installation
+                            - text: for client-specific setup.
+                          - heading [level=2] [ref=f1e246]:
+                            - text: Playwright MCP vs Playwright CLI
+                            - link "Direct link to Playwright MCP vs Playwright CLI" [ref=f1e247]:
+                              - /url: "#playwright-mcp-vs-playwright-cli"
+                              - text: "#"
+                          - table [ref=f1e248]:
+                            - rowgroup [ref=f1e249]:
+                              - row [ref=f1e250]:
+                                - columnheader [ref=f1e251]
+                                - columnheader "MCP" [ref=f1e252]:
+                                  - strong [ref=f1e253]: MCP
+                                - columnheader "Playwright CLI" [ref=f1e254]:
+                                  - strong [ref=f1e255]:
+                                    - link "Playwright CLI" [ref=f1e256]:
+                                      - /url: /agent-cli/introduction
+                            - rowgroup [ref=f1e257]:
+                              - row [ref=f1e258]:
+                                - cell [ref=f1e259]:
+                                  - strong [ref=f1e260]: Best for
+                                - cell "Specialized agentic loops, exploratory automation" [ref=f1e261]
+                                - cell "Coding agents (Claude Code, Copilot) working with large codebases" [ref=f1e262]
+                              - row [ref=f1e263]:
+                                - cell [ref=f1e264]:
+                                  - strong [ref=f1e265]: How it works
+                                - cell "LLM calls MCP tools with structured parameters" [ref=f1e266]
+                                - cell "Agent runs shell commands" [ref=f1e267]
+                              - row [ref=f1e268]:
+                                - cell [ref=f1e269]:
+                                  - strong [ref=f1e270]: Token cost
+                                - cell "Higher — tool schemas + snapshots in context" [ref=f1e271]
+                                - cell "Lower — concise CLI output, skills loaded on demand" [ref=f1e272]
+                              - row [ref=f1e273]:
+                                - cell [ref=f1e274]:
+                                  - strong [ref=f1e275]: Default mode
+                                - cell "Headed" [ref=f1e276]
+                                - cell "Headless" [ref=f1e277]
+                              - row [ref=f1e278]:
+                                - cell [ref=f1e279]:
+                                  - strong [ref=f1e280]: Setup
+                                - cell "JSON config in MCP client" [ref=f1e281]
+                                - cell [ref=f1e282]:
+                                  - code [ref=f1e283]: npm install -g @playwright/cli
+                          - heading [level=2] [ref=f1e284]:
+                            - text: Available Tools
+                            - link "Direct link to Available Tools" [ref=f1e285]:
+                              - /url: "#available-tools"
+                              - text: "#"
+                          - heading [level=3] [ref=f1e286]:
+                            - text: Core (always enabled)
+                            - link "Direct link to Core (always enabled)" [ref=f1e287]:
+                              - /url: "#core-always-enabled"
+                              - text: "#"
+                          - table [ref=f1e288]:
+                            - rowgroup [ref=f1e289]:
+                              - row [ref=f1e290]:
+                                - columnheader "Tool" [ref=f1e291]
+                                - columnheader "Description" [ref=f1e292]
+                            - rowgroup [ref=f1e293]:
+                              - row [ref=f1e294]:
+                                - cell [ref=f1e295]:
+                                  - code [ref=f1e296]: browser_navigate
+                                - cell "Navigate to a URL" [ref=f1e297]
+                              - row [ref=f1e298]:
+                                - cell [ref=f1e299]:
+                                  - code [ref=f1e300]: browser_navigate_back
+                                - cell "Go back in history" [ref=f1e301]
+                              - row [ref=f1e302]:
+                                - cell [ref=f1e303]:
+                                  - code [ref=f1e304]: browser_snapshot
+                                - cell "Capture accessibility snapshot" [ref=f1e305]
+                              - row [ref=f1e306]:
+                                - cell [ref=f1e307]:
+                                  - code [ref=f1e308]: browser_find
+                                - cell "Search the snapshot for text or a regexp" [ref=f1e309]
+                              - row [ref=f1e310]:
+                                - cell [ref=f1e311]:
+                                  - code [ref=f1e312]: browser_click
+                                - cell "Click an element" [ref=f1e313]
+                              - row [ref=f1e314]:
+                                - cell [ref=f1e315]:
+                                  - code [ref=f1e316]: browser_hover
+                                - cell "Hover over an element" [ref=f1e317]
+                              - row [ref=f1e318]:
+                                - cell [ref=f1e319]:
+                                  - code [ref=f1e320]: browser_drag
+                                - cell "Drag and drop between elements" [ref=f1e321]
+                              - row [ref=f1e322]:
+                                - cell [ref=f1e323]:
+                                  - code [ref=f1e324]: browser_drop
+                                - cell "Drop files or MIME-typed data onto an element" [ref=f1e325]
+                              - row [ref=f1e326]:
+                                - cell [ref=f1e327]:
+                                  - code [ref=f1e328]: browser_type
+                                - cell "Type text into an element" [ref=f1e329]
+                              - row [ref=f1e330]:
+                                - cell [ref=f1e331]:
+                                  - code [ref=f1e332]: browser_fill_form
+                                - cell "Fill multiple form fields at once" [ref=f1e333]
+                              - row [ref=f1e334]:
+                                - cell [ref=f1e335]:
+                                  - code [ref=f1e336]: browser_select_option
+                                - cell "Select dropdown option" [ref=f1e337]
+                              - row [ref=f1e338]:
+                                - cell [ref=f1e339]:
+                                  - code [ref=f1e340]: browser_press_key
+                                - cell "Press a key (Enter, Tab, etc.)" [ref=f1e341]
+                              - row [ref=f1e342]:
+                                - cell [ref=f1e343]:
+                                  - code [ref=f1e344]: browser_take_screenshot
+                                - cell "Take a PNG/JPEG/WebP screenshot" [ref=f1e345]
+                              - row [ref=f1e346]:
+                                - cell [ref=f1e347]:
+                                  - code [ref=f1e348]: browser_tabs
+                                - cell "List, create, close, select tabs" [ref=f1e349]
+                              - row [ref=f1e350]:
+                                - cell [ref=f1e351]:
+                                  - code [ref=f1e352]: browser_handle_dialog
+                                - cell "Accept or dismiss dialogs" [ref=f1e353]
+                              - row [ref=f1e354]:
+                                - cell [ref=f1e355]:
+                                  - code [ref=f1e356]: browser_file_upload
+                                - cell "Upload files into a file chooser" [ref=f1e357]
+                              - row [ref=f1e358]:
+                                - cell [ref=f1e359]:
+                                  - code [ref=f1e360]: browser_console_messages
+                                - cell "Get console output" [ref=f1e361]
+                              - row [ref=f1e362]:
+                                - cell [ref=f1e363]:
+                                  - code [ref=f1e364]: browser_network_requests
+                                - cell "List network requests" [ref=f1e365]
+                              - row [ref=f1e366]:
+                                - cell [ref=f1e367]:
+                                  - code [ref=f1e368]: browser_network_request
+                                - cell "Show one request in full detail" [ref=f1e369]
+                              - row [ref=f1e370]:
+                                - cell [ref=f1e371]:
+                                  - code [ref=f1e372]: browser_evaluate
+                                - cell "Evaluate JavaScript on page or element" [ref=f1e373]
+                              - row [ref=f1e374]:
+                                - cell [ref=f1e375]:
+                                  - code [ref=f1e376]: browser_run_code_unsafe
+                                - cell "Execute a Playwright code snippet" [ref=f1e377]
+                              - row [ref=f1e378]:
+                                - cell [ref=f1e379]:
+                                  - code [ref=f1e380]: browser_wait_for
+                                - cell "Wait for text or time" [ref=f1e381]
+                              - row [ref=f1e382]:
+                                - cell [ref=f1e383]:
+                                  - code [ref=f1e384]: browser_close
+                                - cell "Close the page" [ref=f1e385]
+                              - row [ref=f1e386]:
+                                - cell [ref=f1e387]:
+                                  - code [ref=f1e388]: browser_resize
+                                - cell "Resize the browser window" [ref=f1e389]
+                          - heading [level=3] [ref=f1e390]:
+                            - text: Network (
+                            - code [ref=f1e391]: "--caps=network"
+                            - text: )
+                            - link "Direct link to network---capsnetwork" [ref=f1e392]:
+                              - /url: "#network---capsnetwork"
+                              - text: "#"
+                          - table [ref=f1e393]:
+                            - rowgroup [ref=f1e394]:
+                              - row [ref=f1e395]:
+                                - columnheader "Tool" [ref=f1e396]
+                                - columnheader "Description" [ref=f1e397]
+                            - rowgroup [ref=f1e398]:
+                              - row [ref=f1e399]:
+                                - cell [ref=f1e400]:
+                                  - code [ref=f1e401]: browser_route
+                                - cell "Mock network requests" [ref=f1e402]
+                              - row [ref=f1e403]:
+                                - cell [ref=f1e404]:
+                                  - code [ref=f1e405]: browser_route_list
+                                - cell "List active mocked routes" [ref=f1e406]
+                              - row [ref=f1e407]:
+                                - cell [ref=f1e408]:
+                                  - code [ref=f1e409]: browser_unroute
+                                - cell "Remove mocked routes" [ref=f1e410]
+                              - row [ref=f1e411]:
+                                - cell [ref=f1e412]:
+                                  - code [ref=f1e413]: browser_network_state_set
+                                - cell "Go online or offline" [ref=f1e414]
+                          - heading [level=3] [ref=f1e415]:
+                            - text: Storage (
+                            - code [ref=f1e416]: "--caps=storage"
+                            - text: )
+                            - link "Direct link to storage---capsstorage" [ref=f1e417]:
+                              - /url: "#storage---capsstorage"
+                              - text: "#"
+                          - table [ref=f1e418]:
+                            - rowgroup [ref=f1e419]:
+                              - row [ref=f1e420]:
+                                - columnheader "Tool" [ref=f1e421]
+                                - columnheader "Description" [ref=f1e422]
+                            - rowgroup [ref=f1e423]:
+                              - row [ref=f1e424]:
+                                - cell [ref=f1e425]:
+                                  - code [ref=f1e426]: browser_cookie_list/get/set/delete/clear
+                                - cell "Manage cookies" [ref=f1e427]
+                              - row [ref=f1e428]:
+                                - cell [ref=f1e429]:
+                                  - code [ref=f1e430]: browser_localstorage_list/get/set/delete/clear
+                                - cell "Manage localStorage" [ref=f1e431]
+                              - row [ref=f1e432]:
+                                - cell [ref=f1e433]:
+                                  - code [ref=f1e434]: browser_sessionstorage_list/get/set/delete/clear
+                                - cell "Manage sessionStorage" [ref=f1e435]
+                              - row [ref=f1e436]:
+                                - cell [ref=f1e437]:
+                                  - code [ref=f1e438]: browser_storage_state
+                                - cell "Save cookies + local storage to a file" [ref=f1e439]
+                              - row [ref=f1e440]:
+                                - cell [ref=f1e441]:
+                                  - code [ref=f1e442]: browser_set_storage_state
+                                - cell "Restore saved state" [ref=f1e443]
+                          - heading [level=3] [ref=f1e444]:
+                            - text: Testing (
+                            - code [ref=f1e445]: "--caps=testing"
+                            - text: )
+                            - link "Direct link to testing---capstesting" [ref=f1e446]:
+                              - /url: "#testing---capstesting"
+                              - text: "#"
+                          - table [ref=f1e447]:
+                            - rowgroup [ref=f1e448]:
+                              - row [ref=f1e449]:
+                                - columnheader "Tool" [ref=f1e450]
+                                - columnheader "Description" [ref=f1e451]
+                            - rowgroup [ref=f1e452]:
+                              - row [ref=f1e453]:
+                                - cell [ref=f1e454]:
+                                  - code [ref=f1e455]: browser_generate_locator
+                                - cell "Generate a Playwright locator for tests" [ref=f1e456]
+                              - row [ref=f1e457]:
+                                - cell [ref=f1e458]:
+                                  - code [ref=f1e459]: browser_verify_element_visible
+                                - cell "Assert element is visible" [ref=f1e460]
+                              - row [ref=f1e461]:
+                                - cell [ref=f1e462]:
+                                  - code [ref=f1e463]: browser_verify_text_visible
+                                - cell "Assert text is visible" [ref=f1e464]
+                              - row [ref=f1e465]:
+                                - cell [ref=f1e466]:
+                                  - code [ref=f1e467]: browser_verify_list_visible
+                                - cell "Assert a list and its items are visible" [ref=f1e468]
+                              - row [ref=f1e469]:
+                                - cell [ref=f1e470]:
+                                  - code [ref=f1e471]: browser_verify_value
+                                - cell "Assert form field value" [ref=f1e472]
+                          - heading [level=3] [ref=f1e473]:
+                            - text: Developer tools (
+                            - code [ref=f1e474]: "--caps=devtools"
+                            - text: )
+                            - link "Direct link to developer-tools---capsdevtools" [ref=f1e475]:
+                              - /url: "#developer-tools---capsdevtools"
+                              - text: "#"
+                          - table [ref=f1e476]:
+                            - rowgroup [ref=f1e477]:
+                              - row [ref=f1e478]:
+                                - columnheader "Tool" [ref=f1e479]
+                                - columnheader "Description" [ref=f1e480]
+                            - rowgroup [ref=f1e481]:
+                              - row [ref=f1e482]:
+                                - cell [ref=f1e483]:
+                                  - code [ref=f1e484]: browser_start_tracing
+                                  - text: /
+                                  - code [ref=f1e485]: browser_stop_tracing
+                                - cell "Record execution traces" [ref=f1e486]
+                              - row [ref=f1e487]:
+                                - cell [ref=f1e488]:
+                                  - code [ref=f1e489]: browser_start_video
+                                  - text: /
+                                  - code [ref=f1e490]: browser_stop_video
+                                - cell "Record session video" [ref=f1e491]
+                              - row [ref=f1e492]:
+                                - cell [ref=f1e493]:
+                                  - code [ref=f1e494]: browser_video_chapter
+                                - cell "Add a chapter card to the video" [ref=f1e495]
+                              - row [ref=f1e496]:
+                                - cell [ref=f1e497]:
+                                  - code [ref=f1e498]: browser_video_show_actions
+                                  - text: /
+                                  - code [ref=f1e499]: browser_video_hide_actions
+                                - cell "Toggle action callouts" [ref=f1e500]
+                              - row [ref=f1e501]:
+                                - cell [ref=f1e502]:
+                                  - code [ref=f1e503]: browser_start_recording
+                                  - text: /
+                                  - code [ref=f1e504]: browser_stop_recording
+                                - cell "Record manual actions as code" [ref=f1e505]
+                              - row [ref=f1e506]:
+                                - cell [ref=f1e507]:
+                                  - code [ref=f1e508]: browser_highlight
+                                  - text: /
+                                  - code [ref=f1e509]: browser_hide_highlight
+                                - cell "Highlight an element on the page" [ref=f1e510]
+                              - row [ref=f1e511]:
+                                - cell [ref=f1e512]:
+                                  - code [ref=f1e513]: browser_annotate
+                                - cell "Ask the user to draw annotations on the page" [ref=f1e514]
+                              - row [ref=f1e515]:
+                                - cell [ref=f1e516]:
+                                  - code [ref=f1e517]: browser_resume
+                                - cell "Resume paused script execution" [ref=f1e518]
+                          - heading [level=3] [ref=f1e519]:
+                            - text: PDF (
+                            - code [ref=f1e520]: "--caps=pdf"
+                            - text: )
+                            - link "Direct link to pdf---capspdf" [ref=f1e521]:
+                              - /url: "#pdf---capspdf"
+                              - text: "#"
+                          - table [ref=f1e522]:
+                            - rowgroup [ref=f1e523]:
+                              - row [ref=f1e524]:
+                                - columnheader "Tool" [ref=f1e525]
+                                - columnheader "Description" [ref=f1e526]
+                            - rowgroup [ref=f1e527]:
+                              - row [ref=f1e528]:
+                                - cell [ref=f1e529]:
+                                  - code [ref=f1e530]: browser_pdf_save
+                                - cell "Export page as PDF" [ref=f1e531]
+                          - heading [level=3] [ref=f1e532]:
+                            - text: Vision (
+                            - code [ref=f1e533]: "--caps=vision"
+                            - text: )
+                            - link "Direct link to vision---capsvision" [ref=f1e534]:
+                              - /url: "#vision---capsvision"
+                              - text: "#"
+                          - table [ref=f1e535]:
+                            - rowgroup [ref=f1e536]:
+                              - row [ref=f1e537]:
+                                - columnheader "Tool" [ref=f1e538]
+                                - columnheader "Description" [ref=f1e539]
+                            - rowgroup [ref=f1e540]:
+                              - row [ref=f1e541]:
+                                - cell [ref=f1e542]:
+                                  - code [ref=f1e543]: browser_mouse_move_xy
+                                - cell "Move mouse to coordinates" [ref=f1e544]
+                              - row [ref=f1e545]:
+                                - cell [ref=f1e546]:
+                                  - code [ref=f1e547]: browser_mouse_click_xy
+                                - cell "Click at coordinates" [ref=f1e548]
+                              - row [ref=f1e549]:
+                                - cell [ref=f1e550]:
+                                  - code [ref=f1e551]: browser_mouse_drag_xy
+                                - cell "Drag between coordinates" [ref=f1e552]
+                              - row [ref=f1e553]:
+                                - cell [ref=f1e554]:
+                                  - code [ref=f1e555]: browser_mouse_down
+                                  - text: /
+                                  - code [ref=f1e556]: browser_mouse_up
+                                - cell "Mouse button press/release" [ref=f1e557]
+                              - row [ref=f1e558]:
+                                - cell [ref=f1e559]:
+                                  - code [ref=f1e560]: browser_mouse_wheel
+                                - cell "Scroll with mouse wheel" [ref=f1e561]
+                          - heading [level=3] [ref=f1e562]:
+                            - text: Config (
+                            - code [ref=f1e563]: "--caps=config"
+                            - text: )
+                            - link "Direct link to config---capsconfig" [ref=f1e564]:
+                              - /url: "#config---capsconfig"
+                              - text: "#"
+                          - table [ref=f1e565]:
+                            - rowgroup [ref=f1e566]:
+                              - row [ref=f1e567]:
+                                - columnheader "Tool" [ref=f1e568]
+                                - columnheader "Description" [ref=f1e569]
+                            - rowgroup [ref=f1e570]:
+                              - row [ref=f1e571]:
+                                - cell [ref=f1e572]:
+                                  - code [ref=f1e573]: browser_get_config
+                                - cell "Get the resolved config" [ref=f1e574]
+                      - navigation "Docs pages" [ref=f1e575]:
+                        - link "Next Installation »" [ref=f1e576]:
+                          - /url: /mcp/installation
+                          - generic [ref=f1e577]: Next
+                          - generic [ref=f1e578]: Installation »
+                    - list [ref=f1e581]:
+                      - listitem [ref=f1e582]:
+                        - link "Example" [ref=f1e583]:
+                          - /url: "#example"
+                      - listitem [ref=f1e584]:
+                        - link "Key Features" [ref=f1e585]:
+                          - /url: "#key-features"
+                      - listitem [ref=f1e586]:
+                        - link "Quick Start" [ref=f1e587]:
+                          - /url: "#quick-start"
+                      - listitem [ref=f1e588]:
+                        - link "Playwright MCP vs Playwright CLI" [ref=f1e589]:
+                          - /url: "#playwright-mcp-vs-playwright-cli"
+                      - listitem [ref=f1e590]:
+                        - link "Available Tools" [ref=f1e591]:
+                          - /url: "#available-tools"
+                        - list [ref=f1e592]:
+                          - listitem [ref=f1e593]:
+                            - link "Core (always enabled)" [ref=f1e594]:
+                              - /url: "#core-always-enabled"
+                          - listitem [ref=f1e595]:
+                            - link [ref=f1e596]:
+                              - /url: "#network---capsnetwork"
+                              - text: Network (
+                              - code [ref=f1e597]: "--caps=network"
+                              - text: )
+                          - listitem [ref=f1e598]:
+                            - link [ref=f1e599]:
+                              - /url: "#storage---capsstorage"
+                              - text: Storage (
+                              - code [ref=f1e600]: "--caps=storage"
+                              - text: )
+                          - listitem [ref=f1e601]:
+                            - link [ref=f1e602]:
+                              - /url: "#testing---capstesting"
+                              - text: Testing (
+                              - code [ref=f1e603]: "--caps=testing"
+                              - text: )
+                          - listitem [ref=f1e604]:
+                            - link [ref=f1e605]:
+                              - /url: "#developer-tools---capsdevtools"
+                              - text: Developer tools (
+                              - code [ref=f1e606]: "--caps=devtools"
+                              - text: )
+                          - listitem [ref=f1e607]:
+                            - link [ref=f1e608]:
+                              - /url: "#pdf---capspdf"
+                              - text: PDF (
+                              - code [ref=f1e609]: "--caps=pdf"
+                              - text: )
+                          - listitem [ref=f1e610]:
+                            - link [ref=f1e611]:
+                              - /url: "#vision---capsvision"
+                              - text: Vision (
+                              - code [ref=f1e612]: "--caps=vision"
+                              - text: )
+                          - listitem [ref=f1e613]:
+                            - link [ref=f1e614]:
+                              - /url: "#config---capsconfig"
+                              - text: Config (
+                              - code [ref=f1e615]: "--caps=config"
+                              - text: )
+              - contentinfo [ref=f1e616]:
+                - generic [ref=f1e617]:
+                  - generic [ref=f1e618]:
+                    - generic [ref=f1e619]:
+                      - generic [ref=f1e620]: Learn
+                      - list [ref=f1e621]:
+                        - listitem [ref=f1e622]:
+                          - link "Getting started" [ref=f1e623]:
+                            - /url: /docs/intro
+                        - listitem [ref=f1e624]:
+                          - link [ref=f1e625]:
+                            - /url: https://learn.microsoft.com/en-us/training/modules/build-with-playwright/
+                            - text: Playwright Training
+                            - img "(opens in new tab)" [ref=f1e626]
+                        - listitem [ref=f1e628]:
+                          - link "Learn Videos" [ref=f1e629]:
+                            - /url: /community/learn-videos
+                        - listitem [ref=f1e630]:
+                          - link "Feature Videos" [ref=f1e631]:
+                            - /url: /community/feature-videos
+                    - generic [ref=f1e632]:
+                      - generic [ref=f1e633]: Community
+                      - list [ref=f1e634]:
+                        - listitem [ref=f1e635]:
+                          - link [ref=f1e636]:
+                            - /url: https://stackoverflow.com/questions/tagged/playwright
+                            - text: Stack Overflow
+                            - img "(opens in new tab)" [ref=f1e637]
+                        - listitem [ref=f1e639]:
+                          - link [ref=f1e640]:
+                            - /url: https://aka.ms/playwright/discord
+                            - text: Discord
+                            - img "(opens in new tab)" [ref=f1e641]
+                        - listitem [ref=f1e643]:
+                          - link [ref=f1e644]:
+                            - /url: https://x.com/playwrightweb
+                            - text: X
+                            - img "(opens in new tab)" [ref=f1e645]
+                        - listitem [ref=f1e647]:
+                          - link [ref=f1e648]:
+                            - /url: https://www.linkedin.com/company/playwrightweb
+                            - text: LinkedIn
+                            - img "(opens in new tab)" [ref=f1e649]
+                    - generic [ref=f1e651]:
+                      - generic [ref=f1e652]: More
+                      - list [ref=f1e653]:
+                        - listitem [ref=f1e654]:
+                          - link [ref=f1e655]:
+                            - /url: https://github.com/microsoft/playwright
+                            - text: GitHub
+                            - img "(opens in new tab)" [ref=f1e656]
+                        - listitem [ref=f1e658]:
+                          - link [ref=f1e659]:
+                            - /url: https://www.youtube.com/channel/UC46Zj8pDH5tDosqm1gd7WTg
+                            - text: YouTube
+                            - img "(opens in new tab)" [ref=f1e660]
+                        - listitem [ref=f1e662]:
+                          - link [ref=f1e663]:
+                            - /url: https://dev.to/playwright
+                            - text: Blog
+                            - img "(opens in new tab)" [ref=f1e664]
+                        - listitem [ref=f1e666]:
+                          - link "Ambassadors" [ref=f1e667]:
+                            - /url: /community/ambassadors
+                        - listitem [ref=f1e668]:
+                          - link [ref=f1e669]:
+                            - /url: https://go.microsoft.com/fwlink/?LinkId=521839
+                            - text: Microsoft Privacy Statement
+                            - img "(opens in new tab)" [ref=f1e670]
+                  - generic [ref=f1e672]: Copyright © 2026 Microsoft
+          - paragraph [ref=e36]: Me too!
+          - iframe [ref=e37]:
+            - generic [ref=f2e1]:
+              - generic [aria-hidden] [ref=f2e2]: "For AI agents: the site's llms.txt is at /llms.txt. This page has a Markdown version at /index.md."
+              - banner:
+                - navigation [ref=f2e3]:
+                  - link [ref=f2e4]:
+                    - /url: /
+                    - img "Selenium logo green" [ref=f2e6]
+                  - generic [ref=f2e17]:
+                    - list [ref=f2e18]:
+                      - listitem [ref=f2e19]:
+                        - button "About" [ref=f2e20] [cursor=pointer]
+                      - listitem [ref=f2e21]:
+                        - link "Downloads" [ref=f2e22]:
+                          - /url: /downloads
+                      - listitem [ref=f2e23]:
+                        - link "Documentation" [ref=f2e24]:
+                          - /url: /documentation
+                      - listitem [ref=f2e25]:
+                        - link "Projects" [ref=f2e26]:
+                          - /url: /projects
+                      - listitem [ref=f2e27]:
+                        - link "Support" [ref=f2e28]:
+                          - /url: /support
+                      - listitem [ref=f2e29]:
+                        - link "Blog" [ref=f2e30]:
+                          - /url: /blog
+                      - listitem [ref=f2e31]:
+                        - 'button "Code example language: Java" [ref=f2e32] [cursor=pointer]': Java
+                      - listitem [ref=f2e34]:
+                        - generic [ref=f2e35]:
+                          - button "English" [ref=f2e36] [cursor=pointer]
+                          - text: 
+                    - button "Search (Ctrl+K)" [ref=f2e40] [cursor=pointer]:
+                      - generic [ref=f2e41]: Search
+                      - generic [ref=f2e45]: K
+              - generic [ref=f2e50]:
+                - main [ref=f2e51]:
+                  - generic [ref=f2e55]:
+                    - heading "Automate any browser, from any language." [level=1] [ref=f2e56]
+                    - paragraph [ref=f2e57]:
+                      - text: Selenium is a browser automation tool that gives you full control over Chrome, Firefox, Edge and Safari. Write your scripts in Java, Python, C#, Ruby, JavaScript or Kotlin using the official
+                      - link "W3C WebDriver standard" [ref=f2e58]:
+                        - /url: https://w3c.github.io/webdriver-bidi/
+                      - text: .
+                    - generic [ref=f2e59]:
+                      - link "Get started" [ref=f2e60]:
+                        - /url: /documentation/webdriver/getting_started/
+                      - link "Using AI agents" [ref=f2e62]:
+                        - /url: /documentation/ai_agents/
+                    - paragraph [ref=f2e64]: "Works out of the box: Selenium downloads what it needs to talk to your browser, so there is nothing to install by hand."
+                  - generic [ref=f2e68]:
+                    - heading "Install Selenium and run your first script" [level=2] [ref=f2e69]
+                    - paragraph [ref=f2e70]: Add the Selenium package for your language, then run the script below. It opens Chrome, loads a page and closes the browser again.
+                    - tablist "Code example language" [ref=f2e71]:
+                      - tab "Java" [selected] [ref=f2e72] [cursor=pointer]
+                      - tab "Python" [ref=f2e73] [cursor=pointer]
+                      - tab "CSharp" [ref=f2e74] [cursor=pointer]
+                      - tab "Ruby" [ref=f2e75] [cursor=pointer]
+                      - tab "JavaScript" [ref=f2e76] [cursor=pointer]
+                      - tab "Kotlin" [ref=f2e77] [cursor=pointer]
+                    - tabpanel "Java" [ref=f2e79]:
+                      - paragraph [ref=f2e80]:
+                        - text: "Java: add"
+                        - code [ref=f2e81]: org.seleniumhq.selenium:selenium-java
+                        - text: "to your build, then run:"
+                      - code [ref=f2e85]:
+                        - text: package
+                        - generic [ref=f2e86]: dev.selenium.hello
+                        - text: ; import
+                        - generic [ref=f2e87]: org.openqa.selenium.
+                        - text: WebDriver; import
+                        - generic [ref=f2e88]: org.openqa.selenium.chrome.
+                        - text: "ChromeDriver; public class HelloSelenium { public static void main(String[] args) { WebDriver driver = new ChromeDriver(); driver.get(\"https://selenium.dev\"); driver.quit(); } }"
+                      - link [ref=f2e90]:
+                        - /url: https://github.com/SeleniumHQ/seleniumhq.github.io/blob/trunk//examples/java/src/test/java/dev/selenium/hello/HelloSelenium.java
+                        - strong [ref=f2e92]: View on GitHub
+                    - paragraph [ref=f2e93]:
+                      - text: Need more detail? Follow the
+                      - link "Getting Started guide" [ref=f2e94]:
+                        - /url: /documentation/webdriver/getting_started/
+                      - text: .
+                  - heading "Pick your tool" [level=2] [ref=f2e97]
+                  - generic [ref=f2e100]:
+                    - generic [ref=f2e102]:
+                      - generic [ref=f2e103]:
+                        - img "Selenium WebDriver" [ref=f2e106]
+                        - heading "Selenium WebDriver" [level=4] [ref=f2e109]
+                        - paragraph
+                        - paragraph [ref=f2e110]:
+                          - strong [ref=f2e111]: Use this when
+                          - text: you want to drive a browser from code in your own language. WebDriver is a collection of language-specific bindings that control a real browser the way a user would, and it is the foundation for everything else Selenium does.
+                        - paragraph
+                      - link "Read more" [ref=f2e114]:
+                        - /url: /documentation/webdriver/
+                    - generic [ref=f2e117]:
+                      - generic [ref=f2e118]:
+                        - img "Selenium Grid" [ref=f2e121]
+                        - heading "Selenium Grid" [level=4] [ref=f2e123]
+                        - paragraph
+                        - paragraph [ref=f2e124]:
+                          - strong [ref=f2e125]: Use this when
+                          - text: you need to run your WebDriver tests on several machines, browsers and operating systems at once. Grid distributes sessions from a central point so you can run against a vast combination of environments in parallel.
+                        - paragraph
+                      - link "Read more" [ref=f2e128]:
+                        - /url: /documentation/grid/
+                  - generic [ref=f2e131]:
+                    - heading "Used by projects and teams including" [level=2] [ref=f2e132]
+                    - paragraph [ref=f2e133]:
+                      - link "34,616 GitHub stars" [ref=f2e134]:
+                        - /url: https://github.com/SeleniumHQ/selenium/stargazers
+                    - list [ref=f2e136]:
+                      - listitem:
+                        - link "Wikimedia Foundation":
+                          - /url: https://www.wikimedia.org/
+                          - img "Wikimedia Foundation"
+                      - listitem:
+                        - link "OpenStack":
+                          - /url: https://www.openstack.org/
+                          - img "OpenStack"
+                      - listitem:
+                        - link "Jenkins":
+                          - /url: https://www.jenkins.io/
+                          - img "Jenkins"
+                      - listitem:
+                        - link "Drupal":
+                          - /url: https://www.drupal.org/
+                          - img "Drupal"
+                      - listitem [ref=f2e137]:
+                        - link "Moodle" [ref=f2e138]:
+                          - /url: https://moodle.org/
+                      - listitem [ref=f2e139]:
+                        - link "Mozilla" [ref=f2e140]:
+                          - /url: https://www.mozilla.org/
+                      - listitem [ref=f2e141]:
+                        - link "Progress" [ref=f2e142]:
+                          - /url: https://www.progress.com/
+                      - listitem [ref=f2e143]:
+                        - link "trivago" [ref=f2e144]:
+                          - /url: https://www.trivago.com/
+                    - paragraph [ref=f2e145]:
+                      - text: Does your organisation use Selenium?
+                      - link "Add your logo" [ref=f2e146]:
+                        - /url: https://github.com/SeleniumHQ/seleniumhq.github.io/issues/new?template=used_by_logo.yml
+                    - paragraph [ref=f2e147]:
+                      - text: Logos are trademarks of their respective owners. Showing them does not mean these organisations endorse Selenium. The Wikimedia Foundation logo is a trademark of the Wikimedia Foundation and is used with the permission of the Wikimedia Foundation. We are not endorsed by or affiliated with the Wikimedia Foundation. Jenkins logo by the
+                      - link "Jenkins project" [ref=f2e148]:
+                        - /url: https://jenkins.io/
+                      - text: ","
+                      - link "CC BY-SA 3.0" [ref=f2e149]:
+                        - /url: https://creativecommons.org/licenses/by-sa/3.0/
+                      - text: .
+                  - heading "Development Partners" [level=2] [ref=f2e151]
+                  - generic [ref=f2e152]:
+                    - link [ref=f2e154]:
+                      - /url: https://www.browserstack.com/automate?utm_campaign=open-source-sponsor&utm_campaigncode=701OW000009sQwVYAU&utm_medium=partnered&utm_source=seleniumorg
+                      - img "BrowserStack" [ref=f2e155]
+                    - link [ref=f2e157]:
+                      - /url: https://www.testmuai.com
+                      - img "TestMu AI (formerly LambdaTest)" [ref=f2e158]
+                  - heading "Selenium Level Sponsors" [level=2] [ref=f2e160]
+                  - generic [ref=f2e161]:
+                    - link [ref=f2e163]:
+                      - /url: https://brightdata.com/?utm_source=brand&utm_campaign=brnd-mkt_partners_selenium
+                      - img "Bright Data" [ref=f2e164]
+                    - link [ref=f2e166]:
+                      - /url: https://applitools.com/
+                      - img "Applitools" [ref=f2e167]
+                    - link [ref=f2e169]:
+                      - /url: https://www.thordata.com/?ls=waOicIkB&lk=selenium
+                      - img "Thordata" [ref=f2e170]
+                  - heading "News" [level=2] [ref=f2e173]
+                  - generic [ref=f2e174]:
+                    - generic [ref=f2e177]:
+                      - heading "Selenium 4.54 Released!" [level=4] [ref=f2e178]
+                      - paragraph [ref=f2e179]: Monday, November 23, 2026
+                      - paragraph [ref=f2e180]:
+                        - text: By Diego Molina
+                        - link "@diemol" [ref=f2e181]:
+                          - /url: https://www.diemol.com
+                    - generic [ref=f2e184]:
+                      - paragraph [ref=f2e185]: Today we’re happy to announce that Selenium 4.54 has been released!
+                      - link "Read More" [ref=f2e186]:
+                        - /url: https://www.selenium.dev/blog/2026/selenium-4-54-released/
+                  - generic [ref=f2e188]:
+                    - generic [ref=f2e191]:
+                      - heading "Selenium 4.53 Released!" [level=4] [ref=f2e192]
+                      - paragraph [ref=f2e193]: Tuesday, November 17, 2026
+                      - paragraph [ref=f2e194]:
+                        - text: By Diego Molina
+                        - link "@diemol" [ref=f2e195]:
+                          - /url: https://www.diemol.com
+                    - generic [ref=f2e198]:
+                      - paragraph [ref=f2e199]: Today we’re happy to announce that Selenium 4.53 has been released!
+                      - link "Read More" [ref=f2e200]:
+                        - /url: https://www.selenium.dev/blog/2026/selenium-4-53-released/
+                  - generic [ref=f2e202]:
+                    - generic [ref=f2e205]:
+                      - heading "Selenium 4.52 Released!" [level=4] [ref=f2e206]
+                      - paragraph [ref=f2e207]: Thursday, October 29, 2026
+                      - paragraph [ref=f2e208]:
+                        - text: By Diego Molina
+                        - link "@diemol" [ref=f2e209]:
+                          - /url: https://www.diemol.com
+                    - generic [ref=f2e212]:
+                      - paragraph [ref=f2e213]: Today we’re happy to announce that Selenium 4.52 has been released!
+                      - link "Read More" [ref=f2e214]:
+                        - /url: https://www.selenium.dev/blog/2026/selenium-4-52-released/
+                  - link "More news" [ref=f2e218]:
+                    - /url: /blog
+                  - generic [ref=f2e222]:
+                    - heading "Support the Selenium Project" [level=2] [ref=f2e223]
+                    - paragraph [ref=f2e224]: Learn more or view the full list of sponsors.
+                    - link "Learn more" [ref=f2e226]:
+                      - /url: /sponsors
+                  - generic [ref=f2e230]:
+                    - heading "Donate to Selenium" [level=2] [ref=f2e231]
+                    - heading [level=3] [ref=f2e232]:
+                      - text: through
+                      - link "Open Collective" [ref=f2e233]:
+                        - /url: https://opencollective.com/selenium
+                - contentinfo [ref=f2e234]:
+                  - generic [ref=f2e236]:
+                    - list [ref=f2e238]:
+                      - listitem "Selenium Linkedin" [ref=f2e239]:
+                        - link "Selenium Linkedin" [ref=f2e240]:
+                          - /url: https://www.linkedin.com/company/4826427/
+                      - listitem "Selenium X" [ref=f2e242]:
+                        - link "Selenium X" [ref=f2e243]:
+                          - /url: https://x.com/SeleniumHQ
+                      - listitem "Selenium Community YouTube Channel" [ref=f2e245]:
+                        - link "Selenium Community YouTube Channel" [ref=f2e246]:
+                          - /url: https://www.youtube.com/@SeleniumHQProject/
+                      - listitem "Selenium Mastodon" [ref=f2e248]:
+                        - link "Selenium Mastodon" [ref=f2e249]:
+                          - /url: https://mastodon.social/@seleniumHQ@fosstodon.org
+                      - listitem "Selenium BlueSky" [ref=f2e251]:
+                        - link "Selenium BlueSky" [ref=f2e252]:
+                          - /url: https://bsky.app/profile/seleniumconf.bsky.social
+                      - listitem "User mailing list" [ref=f2e254]:
+                        - link "User mailing list" [ref=f2e255]:
+                          - /url: https://groups.google.com/group/selenium-users
+                      - listitem "SeleniumConf YouTube Channel" [ref=f2e257]:
+                        - link "SeleniumConf YouTube Channel" [ref=f2e258]:
+                          - /url: https://www.youtube.com/channel/UCbDlgX_613xNMrDqCe3QNEw
+                    - generic [ref=f2e260]:
+                      - list [ref=f2e261]:
+                        - listitem "Software Freedom Conservancy" [ref=f2e262]:
+                          - link "Software Freedom Conservancy" [ref=f2e263]:
+                            - /url: mailto:selenium@sfconservancy.org
+                        - listitem "GitHub" [ref=f2e265]:
+                          - link "GitHub" [ref=f2e266]:
+                            - /url: https://github.com/seleniumhq/selenium
+                        - listitem "Slack" [ref=f2e268]:
+                          - link "Slack" [ref=f2e269]:
+                            - /url: https://inviter.co/seleniumhq
+                        - listitem "IRC" [ref=f2e271]:
+                          - link "IRC" [ref=f2e272]:
+                            - /url: https://web.libera.chat/#selenium
+                        - listitem "Developer mailing list" [ref=f2e274]:
+                          - link "Developer mailing list" [ref=f2e275]:
+                            - /url: https://groups.google.com/g/selenium-developers
+                      - link [ref=f2e277]:
+                        - /url: https://www.netlify.com
+                        - img "Deploys by Netlify" [ref=f2e278]
+                    - generic [ref=f2e279]:
+                      - text: © 2026 Software Freedom Conservancy All Rights Reserved
+                      - paragraph [ref=f2e280]:
+                        - link "About Selenium" [ref=f2e281]:
+                          - /url: /about/
+    - generic [ref=e39]:
+      - contentinfo [ref=e40]:
+        - complementary [ref=e43]:
+          - generic [ref=e47]:
+            - paragraph [ref=e49]:
+              - link "Learn More" [ref=e50]:
+                - /url: https://linktr.ee/automateNow
+            - paragraph [ref=e52]:
+              - link "About" [ref=e53]:
+                - /url: https://automatenow.io/about/
+      - generic [ref=e55]: © 2020-2026 - automateNow, LLC. All rights reserved.
+  - button "Search Toggler" [expanded] [ref=e58] [cursor=pointer]
+  - link "Go to top" [ref=e60]:
+    - /url: "#body"
+```
+
+# Test source
+
+```ts
+  1  | 
+  2  | import { test } from '@playwright/test';
+  3  | 
+  4  | test('iframe', async ({ page }) => {
+  5  | 
+  6  |     await page.goto("https://practice-automation.com/iframes/");
+  7  | 
+  8  |     const frame = page.frameLocator("#iframe-1");
+  9  | 
+  10 |     await frame.locator("//a[text()='MCP']").click();
+  11 | 
+> 12 |     await frame.locator("//span[text()='installation']").click();
+     |                                                          ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  13 | 
+  14 | });
+  15 | 
+```
